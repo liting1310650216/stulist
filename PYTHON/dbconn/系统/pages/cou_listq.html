@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %} 
+  学生清单  
+{% end %}
+
+{% block content %}
+<a href="/">返回主页</a>
+   <hr>
+	<table>
+		<tr>
+			<td width="150">学生班级</td>
+			<td width="150">学生姓名</td>
+			<td width="80">性别</td>
+            <td width="94">生日</td>
+            <td width="94">学号</td>
+            <td width="100">说明</td>
+		</tr>
+		{% for cou in courses %}
+		<tr>
+			<td>{{ cou['cou_no'] }}</td>
+			<td>{{ cou['name'] }}</td>
+			<td>{{ cou['sex'] }}</td>
+            <td>{{ cou['bir'] }}</td>
+            <td>{{ cou['num'] }}</td>
+            <td>{{ cou['notes'] if cou['notes'] is not None else '' }}</td>
+			<td width="89">
+				<a href="couedit/{{cou['cou_sn']}}"> 修改 </a> &nbsp;
+				<a href="coudel/{{cou['cou_sn']}}"> 删除 </a>
+			</td>
+		</tr>
+		{% end %}
+	</table> 
+{% end %}
