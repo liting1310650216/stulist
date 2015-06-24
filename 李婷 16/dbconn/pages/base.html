@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>{% block title %}缺省标题{% end %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+     <style type="text/css">
+    body {
+	background-image: url(/static/beijing.jpg);
+}
+    </style> 
+    {% block js %}{% end %} 
+  </head>
+  <body>
+  <img src="/static/xiaohui.jpg" width="50" height="50">管理学院信息专业
+      <table border=1 width=116%>
+      <tr style="height=10px;">
+        <td colspan=2>学生名单管理系统</td> </tr>
+      <tr >
+        <td width="160" height="128" style='width:10em'>菜单
+        <ul>
+          <li><a href="/">返回主页</a></li>
+          <li><a href="/coulist">学生名单</a></li>
+        </ul>
+        </td>
+        <td width="455">
+        {% block content %}
+        {% end %}          
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
